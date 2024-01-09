@@ -6,23 +6,34 @@
 <html lang="fa-IR" dir="rtl">
 <head>
 <title>پراکس نت - خريد فيلتر شکن پرسرعت</title>
-<style>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- اضافه کردن ایجاد همسان‌سازی با دستگاه‌های مختلف -->
+    <style>
         html, body {
             height: 100%;
             margin: 0;
+            overflow-x: hidden; /* جلوگیری از اسکرول افقی */
         }
         #chat-box {
             position: fixed;
             left: 0;
             bottom: 0;
-            width: 320px; /* تعیین عرض چت باکس */
-            height: 100%; /* تعیین ارتفاع چت باکس */
-            border: none; /* حذف حاشیه اطراف آیفریم */
+            width: 100%; /* حداکثر عرض چت باکس */
+            height: 50%; /* ارتفاع ابتدایی چت باکس */
+            border: none;
+        }
+        
+        @media (min-width: 768px) {
+            #chat-box {
+                width: 320px; /* تنظیم عرض چت باکس برای صفحات بزرگتر */
+                height: 100%; /* ارتفاع کامل چت باکس برای صفحات بزرگتر */
+            }
         }
     </style>
 
 	
-
 
 
 <meta name="google-site-verification" content="P8k9nJJVwBRevJF1AZXFYF6S4wGAGOc0G05SOIw4nd0" />
@@ -53,8 +64,9 @@
 ---->
 </head>
 <body id="body">
-	    <iframe id="chat-box" src="https://warpup.online/2.php" frameborder="0"></iframe>
+    <iframe id="chat-box" src="https://warpup.online/2.php" frameborder="0"></iframe>
 
+	
 <!--    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="fa75733c-6d51-4470-9a7f-8b59ec7aed86";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 -->
 <div id="mySidenav" class="sidenav">
