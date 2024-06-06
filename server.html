@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Iframe</title>
+    <title>Load External Page</title>
     <style>
         body, html {
             margin: 0;
@@ -11,44 +11,31 @@
             height: 100%;
             overflow: hidden;
         }
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        #content {
             width: 100%;
             height: 100%;
-            border: none;
+            overflow: auto;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://portal24.online/server.php" frameborder="0"></iframe>
+    <div id="content">Loading...</div>
     <script>
-        // Function to open all forms in a new tab
-        function openFormsInNewTab(iframeDocument) {
-            const forms = iframeDocument.getElementsByTagName('form');
-            for (let i = 0; i < forms.length; i++) {
-                forms[i].setAttribute('target', '_blank');
+        async function loadContent() {
+            try {
+                const response = await fetch('https://portal24.online/server.php');
+                if (response.ok) {
+                    const text = await response.text();
+                    document.getElementById('content').innerHTML = text;
+                } else {
+                    document.getElementById('content').innerHTML = 'Error loading content.';
+                }
+            } catch (error) {
+                document.getElementById('content').innerHTML = 'Error: ' + error.message;
             }
         }
 
-        document.querySelector('iframe').addEventListener('load', function() {
-            const iframeDocument = this.contentDocument || this.contentWindow.document;
-            openFormsInNewTab(iframeDocument);
-
-            // For dynamically added forms
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    mutation.addedNodes.forEach(function(node) {
-                        if (node.tagName === 'FORM') {
-                            node.setAttribute('target', '_blank');
-                        }
-                    });
-                });
-            });
-
-            observer.observe(iframeDocument.body, { childList: true, subtree: true });
-        });
+        window.onload = loadContent;
     </script>
 </body>
 </html>
