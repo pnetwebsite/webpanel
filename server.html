@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پنل سرور ها</title>
+    <title>Responsive Iframe</title>
     <style>
         body, html {
             margin: 0;
@@ -24,13 +24,30 @@
 <body>
     <iframe src="https://portal24.online/server.php" frameborder="0"></iframe>
     <script>
-        // Open all links within the iframe in a new tab
+        // Function to open all forms in a new tab
+        function openFormsInNewTab(iframeDocument) {
+            const forms = iframeDocument.getElementsByTagName('form');
+            for (let i = 0; i < forms.length; i++) {
+                forms[i].setAttribute('target', '_blank');
+            }
+        }
+
         document.querySelector('iframe').addEventListener('load', function() {
             const iframeDocument = this.contentDocument || this.contentWindow.document;
-            const links = iframeDocument.getElementsByTagName('a');
-            for (let i = 0; i < links.length; i++) {
-                links[i].setAttribute('target', '_blank');
-            }
+            openFormsInNewTab(iframeDocument);
+
+            // For dynamically added forms
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.tagName === 'FORM') {
+                            node.setAttribute('target', '_blank');
+                        }
+                    });
+                });
+            });
+
+            observer.observe(iframeDocument.body, { childList: true, subtree: true });
         });
     </script>
 </body>
