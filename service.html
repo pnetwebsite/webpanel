@@ -72,13 +72,12 @@ a:hover {
 
 
 
-  <a href=“https://t.me/prox_net” target=“_blank”>پیام در تلگرام</a>
+<a href=“https://t.me/prox_net” target=“_blank”>پیام در تلگرام</a>
 <a href=“javascript:void(0);” id=“telegramLink” data-clipboard-text=“@prox_net” dir=“ltr”>@prox_net</a>
 
 <script>
 // فعال‌سازی Clipboard.js
 var clipboard = new ClipboardJS(‘#telegramLink’);
-
 clipboard.on('success', function(e) {
   console.log('کپی شد: ', e.text);
   // می‌توانید اعلان یا پیام موفقیت را اینجا نمایش دهید
@@ -88,6 +87,7 @@ clipboard.on('error', function(e) {
   console.error('کپی نشد: ', e.action);
   // می‌توانید اعلان یا پیام خطا را اینجا نمایش دهید
 });
+
 </script>
 </div>
 
@@ -138,7 +138,6 @@ darkMedia.addListener(function(e) {
 toggleTheme(e.matches);
 });
 }
-
 </script>
   
 </body>
