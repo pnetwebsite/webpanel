@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>خرید سرویس</title>
-<link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v21.2.1/dist/font-face.css" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v21.2.1/dist/font-face.css" rel="stylesheet" type="text/css" />
 <style>
 body {
   margin: 0;
@@ -26,6 +26,8 @@ body {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  top: -40px; /* انتقال باکس 30 پیکسل به بالا */
 }
 
 a {
@@ -56,21 +58,16 @@ a:hover {
   }
 }
 </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 </head>
 <body>
 
 <div class="container">
-  <h1>  خوش آمدید</h1>
-  <p>برای خرید سرویس لطفا به آی دی تلگرام پیام ارسال کنید </p>
+  <h1>خوش آمدید</h1>
+  <p>برای خرید سرویس لطفا به آی دی تلگرام پیام ارسال کنید</p>
   <!-- آیکون تلگرام -->
   <img src="telegram.png" alt="خرید اشتراک" class="icon">
   <!-- لینک ها -->
-
-
-
-
   <a href="https://t.me/prox_net" target="_blank">پیام در تلگرام</a>
   <a href="javascript:void(0);" id="telegramLink" data-clipboard-text="@prox_net" dir="ltr">@prox_net</a>
 
@@ -89,7 +86,7 @@ a:hover {
     });
   </script>
   
-  <script type="text/javascript">
+  <script>
     var protoUrl = "tg://resolve?domain=prox_net";
     
     if (false) {
@@ -146,5 +143,6 @@ a:hover {
     }
   </script>
   
+</div>
 </body>
 </html>
