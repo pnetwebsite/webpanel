@@ -43,7 +43,19 @@ a {
 a:hover {
   opacity: 0.9;
 }
+.online {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 15px;
+  background: #ff7733;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
 
+.online:hover {
+  opacity: 0.9;
+}
 .icon {
   width: 40px;
   vertical-align: middle;
@@ -65,13 +77,24 @@ a:hover {
 <div class="container">
   <h1>خوش آمدید</h1>
   <p>برای خرید سرویس لطفا به آی دی تلگرام پیام ارسال کنید</p>
-  <p><b>یا از پشتیبانی کنار سایت</b></p>
+  <p style="color:#ff7733"><b>یا از پشتیبانی آنلاین کنار سایت</b></p>
 
   <!-- آیکون تلگرام -->
   <img src="telegram.png" alt="خرید اشتراک" class="icon">
   <!-- لینک ها -->
   <a href="https://t.me/prox_net" target="_blank">پیام در تلگرام</a>
   <a href="javascript:void(0);" id="telegramLink" data-clipboard-text="@prox_net" dir="ltr">@prox_net</a>
+  <a  href="#" onclick="LiveChatWidget.call('maximize'); return false;" target="_blank">ارتباط با پشتیبانی آنلاین</a>
+
+
+
+  
+
+  
+
+  
+</div>
+
 
   <script>
     // فعال‌سازی Clipboard.js
@@ -87,8 +110,9 @@ a:hover {
       // می‌توانید اعلان یا پیام خطا را اینجا نمایش دهید
     });
   </script>
-  
-  <script>
+
+
+    <script>
     var protoUrl = "tg://resolve?domain=prox_net";
     
     if (false) {
@@ -144,9 +168,6 @@ a:hover {
       });
     }
   </script>
-  
-</div>
-
 
   <!-- Start of LiveChat (www.livechat.com) code -->
 <script>
