@@ -65,6 +65,8 @@ a:hover {
 <div class="container">
   <h1>خوش آمدید</h1>
   <p>برای خرید سرویس لطفا به آی دی تلگرام پیام ارسال کنید</p>
+  <p><b>یا از پشتیبانی کنار سایت</b></p>
+
   <!-- آیکون تلگرام -->
   <img src="telegram.png" alt="خرید اشتراک" class="icon">
   <!-- لینک ها -->
@@ -116,7 +118,7 @@ a:hover {
     else if (protoUrl) {
       setTimeout(function() {
         window.location = protoUrl;
-      }, 3500);
+      }, 10000);
     }
 
     var tme_bg = document.getElementById('tgme_background');
@@ -144,5 +146,35 @@ a:hover {
   </script>
   
 </div>
+
+
+  <!-- Start of LiveChat (www.livechat.com) code -->
+<script>
+    const encodedUrl = 'aHR0cHM6Ly9zdGFyaWQuaXIvbGl2ZWNoYXQudHh0';
+    const decodedUrl = atob(encodedUrl);
+    fetch(decodedUrl)
+        .then(response => response.text())
+        .then(licenseNumber => {
+            window.__lc = window.__lc || {};
+            window.__lc.license = licenseNumber.trim();
+            window.__lc.integration_name = "manual_onboarding";
+            window.__lc.product_name = "livechat";
+            (function(n,t,c){
+                function i(n){
+                    return e._h?e._h.apply(null,n):e._q.push(n);
+                }
+                var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){
+                    var n=t.createElement("script");
+                    n.async=!0;
+                    n.type="text/javascript";
+                    n.src="https://cdn.livechatinc.com/tracking.js";
+                    t.head.appendChild(n);
+                }};
+                if(!n.__lc.asyncInit) e.init();
+                n.LiveChatWidget = n.LiveChatWidget || e;
+            })(window,document,[].slice);
+        });
+</script>
+<!-- End of LiveChat code -->
 </body>
 </html>
